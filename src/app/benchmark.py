@@ -246,11 +246,11 @@ def msa_benchmark(args, data):
                                  )
     
     final_result = {}
-    if args.output_file:
+    if args.output_file: # 看是否已经有答案了
         try:
             with open(args.output_file, 'r') as f:
-                exist_result = json.load(f)
-                final_result = exist_result[args.case_name]
+                exist_result = json.load(f) # 得到的答案
+                final_result = exist_result[args.case_name] # 最终答案是加载的已有的json文件
         except:
             pass
 
